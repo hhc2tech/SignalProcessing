@@ -6,7 +6,7 @@ namespace SignalProcessingForms
 {
   public partial class WaveSettingsControl : UserControl
   {
-    public event EventHandler Generate;
+    public event EventHandler<GenericEventArgs<WaveSetup>> Generate;
     public event EventHandler Clear;
 
     public WaveSetup WaveSetup { get; private set; }
@@ -27,7 +27,7 @@ namespace SignalProcessingForms
         this.WaveSetup.NumberOfSamples = (int)this.samplesNumberEditor.Value;
         this.WaveSetup.MaxTime = (double)this.maxTimeEditor.Value/1000;
 
-        Generate(this, EventArgs.Empty);
+        Generate(this, new GenericEventArgs<WaveSetup>(WaveSetup));
       }
     }
 

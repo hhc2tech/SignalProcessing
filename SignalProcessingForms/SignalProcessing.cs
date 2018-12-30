@@ -10,9 +10,9 @@ namespace SignalProcessingForms
     {
       InitializeComponent();
 
-      waveSettingsControl.Generate += (object sender, EventArgs e) =>
+      waveSettingsControl.Generate += (object sender, GenericEventArgs<Generator.WaveSetup> e) =>
       {
-        var wave = Generator.Waves.Generate(waveSettingsControl.WaveSetup);
+        var wave = Generator.Waves.Generate(e.Parameter);
 
         var series = new Series("Series " + (chartWaves.Series.Count + 1));
         series.ChartType = SeriesChartType.Line;
