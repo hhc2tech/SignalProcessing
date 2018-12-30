@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs
+/Generator/bin/Debug
+/Generator/obj/Debug
+/SignalProcessingForms/bin/Debug
+/SignalProcessingForms/obj/Debug
