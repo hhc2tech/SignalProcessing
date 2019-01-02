@@ -38,10 +38,13 @@
       this.label3 = new System.Windows.Forms.Label();
       this.samplesNumberEditor = new System.Windows.Forms.NumericUpDown();
       this.label4 = new System.Windows.Forms.Label();
+      this.sampleRateEditor = new System.Windows.Forms.NumericUpDown();
+      this.label5 = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.freqEditor)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.magnitudeEditor)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.maxTimeEditor)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.samplesNumberEditor)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sampleRateEditor)).BeginInit();
       this.SuspendLayout();
       // 
       // generateBtn
@@ -75,7 +78,7 @@
       this.freqEditor.Size = new System.Drawing.Size(120, 20);
       this.freqEditor.TabIndex = 2;
       this.freqEditor.Value = new decimal(new int[] {
-            50,
+            60,
             0,
             0,
             0});
@@ -102,7 +105,7 @@
       this.magnitudeEditor.Size = new System.Drawing.Size(120, 20);
       this.magnitudeEditor.TabIndex = 5;
       this.magnitudeEditor.Value = new decimal(new int[] {
-            1,
+            5,
             0,
             0,
             0});
@@ -112,13 +115,13 @@
       this.label2.AutoSize = true;
       this.label2.Location = new System.Drawing.Point(68, 61);
       this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(60, 13);
+      this.label2.Size = new System.Drawing.Size(56, 13);
       this.label2.TabIndex = 4;
-      this.label2.Text = "Magnitude:";
+      this.label2.Text = "Amplitude:";
       // 
       // maxTimeEditor
       // 
-      this.maxTimeEditor.Location = new System.Drawing.Point(126, 128);
+      this.maxTimeEditor.Location = new System.Drawing.Point(126, 164);
       this.maxTimeEditor.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -132,19 +135,21 @@
             0,
             0,
             0});
+      this.maxTimeEditor.Visible = false;
       // 
       // label3
       // 
       this.label3.AutoSize = true;
-      this.label3.Location = new System.Drawing.Point(50, 130);
+      this.label3.Location = new System.Drawing.Point(50, 166);
       this.label3.Name = "label3";
       this.label3.Size = new System.Drawing.Size(78, 13);
       this.label3.TabIndex = 6;
       this.label3.Text = "Max Time [ms]:";
+      this.label3.Visible = false;
       // 
       // samplesNumberEditor
       // 
-      this.samplesNumberEditor.Location = new System.Drawing.Point(126, 93);
+      this.samplesNumberEditor.Location = new System.Drawing.Point(127, 93);
       this.samplesNumberEditor.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -154,7 +159,7 @@
       this.samplesNumberEditor.Size = new System.Drawing.Size(120, 20);
       this.samplesNumberEditor.TabIndex = 9;
       this.samplesNumberEditor.Value = new decimal(new int[] {
-            1024,
+            1000,
             0,
             0,
             0});
@@ -168,10 +173,38 @@
       this.label4.TabIndex = 8;
       this.label4.Text = "Samples Number:";
       // 
+      // sampleRateEditor
+      // 
+      this.sampleRateEditor.Location = new System.Drawing.Point(126, 127);
+      this.sampleRateEditor.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+      this.sampleRateEditor.Name = "sampleRateEditor";
+      this.sampleRateEditor.Size = new System.Drawing.Size(120, 20);
+      this.sampleRateEditor.TabIndex = 11;
+      this.sampleRateEditor.Value = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+      // 
+      // label5
+      // 
+      this.label5.AutoSize = true;
+      this.label5.Location = new System.Drawing.Point(35, 129);
+      this.label5.Name = "label5";
+      this.label5.Size = new System.Drawing.Size(79, 13);
+      this.label5.TabIndex = 10;
+      this.label5.Text = "Sampling Rate:";
+      // 
       // WaveSettingsControl
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.Controls.Add(this.sampleRateEditor);
+      this.Controls.Add(this.label5);
       this.Controls.Add(this.samplesNumberEditor);
       this.Controls.Add(this.label4);
       this.Controls.Add(this.maxTimeEditor);
@@ -188,6 +221,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.magnitudeEditor)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.maxTimeEditor)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.samplesNumberEditor)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.sampleRateEditor)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -205,5 +239,7 @@
     private System.Windows.Forms.Label label3;
     private System.Windows.Forms.NumericUpDown samplesNumberEditor;
     private System.Windows.Forms.Label label4;
+    private System.Windows.Forms.NumericUpDown sampleRateEditor;
+    private System.Windows.Forms.Label label5;
   }
 }
