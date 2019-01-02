@@ -10,12 +10,12 @@ namespace Generator
     private int numberOfSamples = 1000;
     private int sampleRate = 2000;
     private double maxTime = 1;
-    private double magnitude = 1;
+    private double amplitude = 1;
 
     public double Frequency { get => freq; set => freq = value; }
     public int NumberOfSamples { get => numberOfSamples; set => numberOfSamples = value; }
     public double MaxTime { get => maxTime; set => maxTime = value; }
-    public double Magnitude { get => magnitude; set => magnitude = value; }
+    public double Amplitude { get => amplitude; set => amplitude = value; }
     public int SampleRate { get => sampleRate; set => sampleRate = value; }
   }
 
@@ -41,17 +41,17 @@ namespace Generator
 
     public static List<Tuple<double, double>> Generate(WaveSetup setup)
     {
-      var sin = Generate(setup.NumberOfSamples, setup.SampleRate, setup.Frequency, setup.Magnitude);
-      return TupleFromArray(sin);
+      var sin = Generate(setup.NumberOfSamples, setup.SampleRate, setup.Frequency, setup.Amplitude);
+      return TuplesFromArray(sin);
     }
 
     public static List<Tuple<double, double>> GenerateByFourierLib(WaveSetup setup)
     {
-      var sin = MathNet.Numerics.Generate.Sinusoidal(setup.NumberOfSamples, setup.SampleRate, setup.Frequency, setup.Magnitude);
-      return TupleFromArray(sin);
+      var sin = MathNet.Numerics.Generate.Sinusoidal(setup.NumberOfSamples, setup.SampleRate, setup.Frequency, setup.Amplitude);
+      return TuplesFromArray(sin);
     }
 
-    private static List<Tuple<double, double>> TupleFromArray(double[] sin)
+    private static List<Tuple<double, double>> TuplesFromArray(double[] sin)
     {
       var result = new List<Tuple<double, double>>();
 

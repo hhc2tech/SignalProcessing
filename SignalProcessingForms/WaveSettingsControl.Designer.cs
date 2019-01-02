@@ -32,7 +32,7 @@
       this.label1 = new System.Windows.Forms.Label();
       this.freqEditor = new System.Windows.Forms.NumericUpDown();
       this.clearBtn = new System.Windows.Forms.Button();
-      this.magnitudeEditor = new System.Windows.Forms.NumericUpDown();
+      this.amplitudeEditor = new System.Windows.Forms.NumericUpDown();
       this.label2 = new System.Windows.Forms.Label();
       this.maxTimeEditor = new System.Windows.Forms.NumericUpDown();
       this.label3 = new System.Windows.Forms.Label();
@@ -41,7 +41,7 @@
       this.sampleRateEditor = new System.Windows.Forms.NumericUpDown();
       this.label5 = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.freqEditor)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.magnitudeEditor)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.amplitudeEditor)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.maxTimeEditor)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.samplesNumberEditor)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.sampleRateEditor)).BeginInit();
@@ -95,16 +95,16 @@
       // 
       // magnitudeEditor
       // 
-      this.magnitudeEditor.Location = new System.Drawing.Point(128, 59);
-      this.magnitudeEditor.Maximum = new decimal(new int[] {
+      this.amplitudeEditor.Location = new System.Drawing.Point(128, 59);
+      this.amplitudeEditor.Maximum = new decimal(new int[] {
             100000,
             0,
             0,
             0});
-      this.magnitudeEditor.Name = "magnitudeEditor";
-      this.magnitudeEditor.Size = new System.Drawing.Size(120, 20);
-      this.magnitudeEditor.TabIndex = 5;
-      this.magnitudeEditor.Value = new decimal(new int[] {
+      this.amplitudeEditor.Name = "magnitudeEditor";
+      this.amplitudeEditor.Size = new System.Drawing.Size(120, 20);
+      this.amplitudeEditor.TabIndex = 5;
+      this.amplitudeEditor.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -209,7 +209,7 @@
       this.Controls.Add(this.label4);
       this.Controls.Add(this.maxTimeEditor);
       this.Controls.Add(this.label3);
-      this.Controls.Add(this.magnitudeEditor);
+      this.Controls.Add(this.amplitudeEditor);
       this.Controls.Add(this.label2);
       this.Controls.Add(this.clearBtn);
       this.Controls.Add(this.freqEditor);
@@ -218,7 +218,7 @@
       this.Name = "WaveSettingsControl";
       this.Size = new System.Drawing.Size(276, 257);
       ((System.ComponentModel.ISupportInitialize)(this.freqEditor)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.magnitudeEditor)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.amplitudeEditor)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.maxTimeEditor)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.samplesNumberEditor)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.sampleRateEditor)).EndInit();
@@ -233,7 +233,7 @@
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.NumericUpDown freqEditor;
     private System.Windows.Forms.Button clearBtn;
-    private System.Windows.Forms.NumericUpDown magnitudeEditor;
+    private System.Windows.Forms.NumericUpDown amplitudeEditor;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.NumericUpDown maxTimeEditor;
     private System.Windows.Forms.Label label3;

@@ -23,7 +23,7 @@ namespace SignalProcessingForms
       if (Generate != null)
       {
         this.WaveSetup.Frequency = (double)this.freqEditor.Value;
-        this.WaveSetup.Magnitude = (double)this.magnitudeEditor.Value;
+        this.WaveSetup.Amplitude = (double)this.amplitudeEditor.Value;
         this.WaveSetup.NumberOfSamples = (int)this.samplesNumberEditor.Value;
         this.WaveSetup.SampleRate = (int)this.sampleRateEditor.Value;
         this.WaveSetup.MaxTime = (double)this.maxTimeEditor.Value/1000;
