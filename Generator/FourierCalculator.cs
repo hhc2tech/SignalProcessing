@@ -7,12 +7,12 @@ namespace Generator
 {
   public class FourierCalculator
   {
-    public static List<Tuple<double, double>> Forward(List<Tuple<double, double>> values)
+    public static List<Tuple<double, double>> Forward(double[] values)
     {
-      Complex32[] samples = new Complex32[values.Count];
-      for (int i = 0; i< values.Count; i++)
+      Complex32[] samples = new Complex32[values.Length];
+      for (int i = 0; i< values.Length; i++)
       {
-        samples[i] = new Complex32((float)values[i].Item2, 0);
+        samples[i] = new Complex32((float)values[i], 0);
       }
 
       Fourier.Forward(samples, FourierOptions.NoScaling);

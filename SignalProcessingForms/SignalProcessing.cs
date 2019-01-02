@@ -34,27 +34,27 @@ namespace SignalProcessingForms
       };
     }
 
-    private void BindWaves(List<Tuple<double, double>> wave, WaveSetup setup)
+    private void BindWaves(double[] wave, WaveSetup setup)
     {
       var series = new Series("Series " + (chartWaves.Series.Count + 1));
       series.ChartType = SeriesChartType.Line;
       chartWaves.Series.Add(series);
 
-      for(var i=0; i <wave.Count/5; i++)// Count/5 draw only part
+      for(var i=0; i < setup .NumberOfSamples/ 5; i++)// Count/5 draw only part
       {
         var time = 1.0 / setup.SampleRate * i;
-        chartWaves.Series[series.Name].Points.AddXY(time, wave[i].Item2);
+        chartWaves.Series[series.Name].Points.AddXY(time, wave[i]);
       }
     }
 
-    private void BindFFTOutput(List<Tuple<double, double>> wave, WaveSetup setup)
+    private void BindFFTOutput(double[] wave, WaveSetup setup)
     {
       var fftResult = FourierCalculator.Forward(wave);
 
       var series = new Series("Freq " + (chartFFTOutputs.Series.Count + 1));
       chartFFTOutputs.Series.Add(series);
-      var numSample = fftResult.Count;
-      double hzInSample = setup.SampleRate / numSample;
+
+      double hzInSample = setup.SampleRate / setup.NumberOfSamples;
 
       for (int i=0; i<= maxFreq; i++)
       {
@@ -65,7 +65,7 @@ namespace SignalProcessingForms
         //abs = abs(sqrt(real^2+imag^2))
         var abs = Math.Abs(Math.Sqrt(powR + powI));
 
-        double mag = (2.0 / numSample) * abs;
+        double mag = (2.0 / setup.NumberOfSamples) * abs;
    
         chartFFTOutputs.Series[series.Name].Points.AddXY(i* hzInSample, mag);
       }

@@ -39,29 +39,18 @@ namespace Generator
       return numArray;
     }
 
-    public static List<Tuple<double, double>> Generate(WaveSetup setup)
+    public static double[] Generate(WaveSetup setup)
     {
       var sin = Generate(setup.NumberOfSamples, setup.SampleRate, setup.Frequency, setup.Amplitude);
-      return TuplesFromArray(sin);
+      return sin;
     }
 
-    public static List<Tuple<double, double>> GenerateByFourierLib(WaveSetup setup)
+    public static double[] GenerateByFourierLib(WaveSetup setup)
     {
       var sin = MathNet.Numerics.Generate.Sinusoidal(setup.NumberOfSamples, setup.SampleRate, setup.Frequency, setup.Amplitude);
-      return TuplesFromArray(sin);
+      return sin;
     }
 
-    private static List<Tuple<double, double>> TuplesFromArray(double[] sin)
-    {
-      var result = new List<Tuple<double, double>>();
-
-      for (int i = 0; i < sin.Length; i++)
-      {
-        var time = i;
-        var value = new Tuple<double, double>(time, sin[i]);
-        result.Add(value);
-      }
-      return result;
-    }
+    
   }
 }
