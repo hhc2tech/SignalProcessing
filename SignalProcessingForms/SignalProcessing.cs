@@ -15,6 +15,9 @@ namespace SignalProcessingForms
     {
       InitializeComponent();
 
+      chartWaves.ChartAreas.ElementAt(0).AxisX.Title = "Seconds";
+      chartFFTOutputs.ChartAreas.ElementAt(0).AxisX.Title = "Hz";
+
       waveSettingsControl.Generate += (object sender, GenericEventArgs<WaveSetup> e) =>
       {
         var wave = Waves.Generate(e.Parameter);
@@ -45,6 +48,8 @@ namespace SignalProcessingForms
         var time = 1.0 / setup.SampleRate * i;
         chartWaves.Series[series.Name].Points.AddXY(time, wave[i]);
       }
+
+      
     }
 
     private void BindFFTOutput(double[] wave, WaveSetup setup)
