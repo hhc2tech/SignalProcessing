@@ -1,5 +1,5 @@
 # SignalProcessing
-Generating waves, calculating FFT of them.
+Generating waves, calculating FFT of them. UI provided in Windows Froms.
 
 Currently app allows to generate sine waves with customization of their properties.
 There is also a view of used frequencies shown, FFT is calculated using https://numerics.mathdotnet.com/
